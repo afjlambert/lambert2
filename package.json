@@ -1,0 +1,23 @@
+{
+  "name": "lambert2",
+  "version": "1.0.0",
+  "description": "...",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/afjlambert/lambert2.git"
+  },
+  "keywords": [],
+  "author": "André Lambert",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/afjlambert/lambert2/issues"
+  },
+  "homepage": "https://github.com/afjlambert/lambert2#readme",
+  "devDependencies": {
+    "lerna": "^3.22.1"
+  }
+}
