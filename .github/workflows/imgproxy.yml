@@ -5,15 +5,19 @@ on:
     branches:
       - master
 
+defaults:
+  run:
+    working-directory: apps/imgproxy
+
 jobs:
   lambda:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
-      - run: zip lambda.zip apps/imgproxy/*
+      - run: zip lambda.zip *
       - uses: stcalica/update-lambda@0.0.2
         with:
-          package: lambda.zip
+          package: apps/imgproxy/lambda.zip
           function-name: imgproxy
           AWS_REGION: ${{ secrets.AWS_REGION }}
           AWS_SECRET_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
