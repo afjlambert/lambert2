@@ -1,9 +1,11 @@
-name: Portfolio
+name: portfolio
 
 on:
   push:
     branches:
       - master
+    paths:
+      - apps/portfolio
 
 defaults:
   run:
