@@ -17,6 +17,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
+      - run: npm ci
       - run: zip lambda.zip *
       - uses: stcalica/update-lambda@0.0.2
         with:
