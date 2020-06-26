@@ -5,8 +5,8 @@ on:
     branches:
       - master
     paths:
-      - .github/workflows/imgproxy
-      - apps/imgproxy
+      - .github/workflows/imgproxy.yml
+      - apps/imgproxy/**
 
 defaults:
   run:

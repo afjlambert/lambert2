@@ -5,8 +5,8 @@ on:
     branches:
       - master
     paths:
-      - .github/workflows/portfolio
-      - apps/portfolio
+      - .github/workflows/portfolio.yml
+      - apps/portfolio/**
 
 defaults:
   run:
