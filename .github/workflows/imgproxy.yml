@@ -2,7 +2,7 @@ name: imgproxy
 
 on:
   push:
-    branches: 
+    branches:
       - master
 
 jobs:
@@ -11,7 +11,7 @@ jobs:
     steps:
       - uses: actions/checkout@master
       - run: zip lambda.zip apps/imgproxy
-      - uses: stcalica/update-lambda
+      - uses: stcalica/update-lambda@0.0.2
         with:
           package: lambda.zip
           function-name: imgproxy
