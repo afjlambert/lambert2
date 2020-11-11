@@ -32,10 +32,10 @@ const posts = [
       <p>For now, it's only one (well actually 3 including
         the one you are reading and 
         <a href="/blog/do-you-really-need-that-backend/">this one</a>) blog-posts
-      while trying I'm to find time to port the other posts.</p>
+      while I'm trying to find time to port the other posts.</p>
 
-      <p>Hope to get into contact with yall! Contact me
-      <a href="/contact/">if you think we should talk</a>.</p>
+      <p>Hope to get into contact with yous all. Contact me if
+      <a href="/contact/">we should talk</a>!</p>
 		`,
   },
   {
