@@ -60,7 +60,7 @@
   </tr>
 </table>
 
-<p>Laptops says a great deal about there owner don't they? Here is mine.</p>
+<p>Laptops says a great deal about their owner don't they? Here is mine.</p>
 <figure>
   <img
     src="images/laptop.resized.jpg"
