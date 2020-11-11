@@ -17,6 +17,11 @@
 <footer>
   Crafted by André Lambert using
   <Tag slug="svelte">Svelte</Tag>
-  and
-  <Tag slug="sapper">Sapper</Tag>
+  . Edit on
+  <a
+    href="https://github.com/afjlambert/lambert2"
+    title="afj lambert on github.com">
+    <img src="icons/github.svg" width="40" alt="Github logo" />
+  </a>
+
 </footer>

@@ -145,4 +145,11 @@ export default [
     featured: true,
     logo: "svg/speurders.jpg",
   },
+  {
+    slug: "speurders-in-de-krant",
+    name: "Speurders in de krant",
+    website: "https://www.speurdersindekrant.nl/",
+    featured: false,
+    logo: "svg/speurders.jpg",
+  },
 ].map((c) => new Company(c));

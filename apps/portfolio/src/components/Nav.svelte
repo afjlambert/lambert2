@@ -16,10 +16,10 @@
       label: "Projects",
       segments: ["projects"]
     },
-    // {
-    //   label: "Blog",
-    //   segments: ["blog"]
-    // },
+    {
+      label: "Blog",
+      segments: ["blog"]
+    },
     {
       label: "Resume",
       segments: ["resume"]

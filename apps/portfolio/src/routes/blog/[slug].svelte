@@ -65,10 +65,10 @@
 <h1>{post.title}</h1>
 
 <ByLine>
-  Published on
+  Published
   <Date value={post.date} />
   by André Lambert
-  {#if post.categories}in{/if}
+  {#if post.categories.length}in{/if}
   {#each post.categories as category}
     <Category slug={category} />
     {', '}

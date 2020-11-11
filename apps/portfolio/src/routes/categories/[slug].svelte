@@ -24,7 +24,7 @@
 
 <h1>{category.title}</h1>
 
-{#if projects}
+{#if projects.length}
   <h2>Projects</h2>
   <StarList>
     {#each projects as project}
@@ -35,7 +35,7 @@
   </StarList>
 {/if}
 
-{#if posts}
+{#if posts.length}
   <h2>Blogs</h2>
   <StarList>
     {#each posts as post}

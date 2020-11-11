@@ -64,8 +64,8 @@ export default [
 
   {
     name: "Data",
-    slug: "data-processing",
-    title: "Data processing",
+    slug: "data",
+    title: "Data",
     tags: [
       "machine-learning",
       "kafka",

@@ -17,10 +17,17 @@
   import StarList from "../../components/StarList.svelte";
   import OutboundLink from "../../components/OutboundLink.svelte";
   import ProjectTeaser from "../../components/ProjectTeaser.svelte";
+  import BlogTeaser from "../../components/BlogTeaser.svelte";
   import Tag from "../../components/Tag.svelte";
   import allProjects from "../../_projects";
+  import allPosts from "../../_posts";
   export let company;
   export let projects = allProjects.filter(p => p.company === company.slug);
+
+  const posts = allPosts.filter(({ company: companySlug }) =>
+    companySlug === company.slug
+  );
+
 </script>
 
 <style>
@@ -62,12 +69,24 @@
   {/each}
 </p>
 
-{#if projects.length > 0}
+{#if projects.length}
   <h2>Projects</h2>
   <StarList>
     {#each projects as project}
       <li>
         <ProjectTeaser slug={project.slug} />
+      </li>
+    {/each}
+  </StarList>
+{/if}
+
+
+{#if posts.length}
+  <h2>Blog posts</h2>
+  <StarList>
+    {#each posts as post}
+    <li>
+      <BlogTeaser slug={post.slug} />
       </li>
     {/each}
   </StarList>

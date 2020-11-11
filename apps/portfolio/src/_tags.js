@@ -1,6 +1,7 @@
 export default [
   { slug: "ab-testing", name: "A/B testing" },
   { slug: "agile", name: "Agile" },
+  { slug: "amsterdam", name: "Amsterdam" },
   { slug: "apollo-client", name: "Apollo Client" },
   { slug: "apollo-server", name: "Apollo Server" },
   { slug: "architecture", name: "Architecture" },
@@ -62,6 +63,7 @@ export default [
     name: "l10n",
     description: `l10n is a numeronym of "Localization". It's the process of adapting internationalized software for a specific region or language by translating text and adding locale-specific components.`,
   },
+  { slug: "legislation", name: "Legislation" },
   { slug: "linux", name: "Linux" },
   { slug: "loader.io", name: "loader.io" },
   { slug: "logstash", name: "Logstash" },
@@ -138,7 +140,7 @@ export default [
   {
     slug: "svelte",
     name: "Svelte",
-    description: "Svelte is a javascript library ...",
+    description: "Svelte is a JavaScript library ...",
   },
   { slug: "tag-manager", name: "Tag Manager" },
   { slug: "tensorflow", name: "Tensorflow" },
@@ -146,6 +148,7 @@ export default [
   { slug: "thumbor", name: "Thumbor" },
   { slug: "transactional-email", name: "Transactional email" },
   { slug: "tuintuin", name: "TuinTuin" },
+  { slug: "typescript", name: "TypeScript" },
   { slug: "typographyjs", name: "Typography.js" },
   { slug: "universal", name: "Universal" },
   { slug: "uwsgi", name: "uWSGI" },

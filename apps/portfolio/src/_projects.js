@@ -4,6 +4,25 @@ function tag(slug, text) {
   return `<a href="${slug}/" class="tag">${text}</a>`;
 }
 
+// Freddy Spierenburg
+// Freddy Spierenburg
+// System Engineer at bol.com
+// April 21, 2014, Freddy worked with André in different groups
+// Andre is een vriendelijke en leergierige ontwikkelaar, waar het heel prettig mee samenwerken is. Hij krijgt dingen voor elkaar en staat open voor suggesties van anderen.
+
+// Marco van de Weg
+// Marco van de Weg
+// Director of Engineering
+// December 27, 2010, Marco managed André directly
+// During his time here, Andre has consistently demonstrated a strong work ethic and a dedication to success.
+//  I often relied on Andre to put together technical high traffic solutions. Let me say that I have no doubt he can adeptly meet the challenges. He has shown me repeatedly that he is profoundly dedicated and responsible. See less
+
+//  Evert Littooy
+// Evert Littooy
+// Marketing Director at DutchChannels
+// April 22, 2008, André worked with Evert in the same group
+// André is a bright and entrepreneurial young professional. Very ambitious and always willing and eager to learn. He is social, creative, reliable and has an enormous drive to make big steps in business. April 22, 2008
+
 class Project extends Model {
   // Project template:
   // {
@@ -59,15 +78,25 @@ export default [
     company: "datapunt-gemeente-amsterdam",
     fulltime: true,
     location: "Amsterdam",
-    categories: ["nodejs", "data-processing", "testing-deployment", "devops"],
+    categories: ["nodejs", "data", "testing-deployment", "devops"],
     dateString: "Nov. 2019 - present",
     teaser: `Helping the city of Amstersdam to pioneer in legislation advancements by
 			building an open source React / GraphQL app to save time and money for civilians.
 			`,
     html: `
-	Work in progress...
-	`,
-    tags: ["open-source", "legislation", "government", "amsterdam", "docker"],
+      Work in progress...
+      <a href="https://vergunningcheck.amsterdam.nl/test" target="_blank">Amsterdam Vergunningcheck</a>
+    `,
+    tags: [
+      "open-source",
+      "react",
+      "graphql",
+      "typescript",
+      "legislation",
+      "government",
+      "amsterdam",
+      "docker",
+    ],
     endorsements: [],
   },
   {
@@ -103,7 +132,7 @@ export default [
       )} ${tag("grpc", "gRPC")} and 
 			${tag("subscriptions", "GraphQL-subscriptions")}.</p>
 		`,
-    categories: ["nodejs", "data-processing"],
+    categories: ["nodejs", "data"],
     tags: [
       "realtime",
       "graphql",
@@ -189,13 +218,13 @@ export default [
     ],
   },
   {
-    name: "Fast Svelte and Sapper powered SPA",
+    name: "Fast Svelte powered SPA",
     slug: "resume-with-svelte",
     company: "lambert-consultancy",
     role: "Javascript engineer",
     fulltime: false,
-    location: "Alkmaar",
-    dateString: "Okt. 2019 - Nov. 2019",
+    location: "Alkmaar (NL)",
+    dateString: "Okt. 2019 - now",
     teaser: `
 			Created a new online resume using Svelte and Sapper. The website was build as a portfolio
 			to showcase the work I've done.
@@ -223,6 +252,7 @@ export default [
       "ci-cd",
       "svelte",
       "sapper",
+      "typescript",
       "responsive",
       "google-cloud",
       "rollup",
@@ -314,27 +344,6 @@ export default [
     tags: [],
     endorsements: [],
   },
-  // {
-  // 	slug: "",
-  // 	name: "",
-  // 	role: "Frontend developer",
-  // 	company: "foleon",
-  // 	location: "Amsterdam",
-  // 	dateString: "Aug. 2017 - Aug. 2018",
-  // 	fulltime: false,
-  // 	categories: ['frontend'],
-  // 	teaser: `
-  // 		Hubspot migration, redesign
-  // 		raadhuis alkmaar
-
-  // 	`,
-  // 	html: `
-
-  // 	`,
-  // 	tags: [],
-  // 	endorsements: []
-  // },
-
   // old-name: instantmagazine
   // fulltime: false,
   // freelance frontend developer. Hubspot CMS, SEO
@@ -396,6 +405,7 @@ export default [
       {
         person: "Roberto Kok",
         role: "Senior Backend Developer at TMG",
+        __date: "June 2, 2017",
         body: `
 					What immediately struck me working with André was his great passion for creating quality software and
 					infrastructure. Skilled at both high-level architecture design and software engineering, he inspires
@@ -405,4 +415,45 @@ export default [
       },
     ],
   },
+  {
+    slug: "",
+    name: "",
+    role: "Frontend developer",
+    company: "foleon",
+    location: "Amsterdam",
+    dateString: "Aug. 2017 - Aug. 2018",
+    fulltime: false,
+    categories: ["frontend"],
+    teaser: `
+  		Hubspot migration, redesign
+  		raadhuis alkmaar
+
+  	`,
+    html: `
+
+  	`,
+    tags: [],
+    // endorsements: []
+  },
 ].map((p) => new Project(p));
+
+// {
+// 	slug: "",
+// 	name: "",
+// 	role: "Frontend developer",
+// 	company: "foleon",
+// 	location: "Amsterdam",
+// 	dateString: "Aug. 2017 - Aug. 2018",
+// 	fulltime: false,
+// 	categories: ['frontend'],
+// 	teaser: `
+// 		Hubspot migration, redesign
+// 		raadhuis alkmaar
+
+// 	`,
+// 	html: `
+
+// 	`,
+// 	tags: [],
+// 	endorsements: []
+// },

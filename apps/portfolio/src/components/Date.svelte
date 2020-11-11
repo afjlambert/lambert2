@@ -4,5 +4,9 @@
 </script>
 
 {#if value}
-  <date>{english.format(value)}</date>
+  {#if typeof value === 'string'}
+    <date>{value}</date>
+  {:else}
+    <date>{english.format(value)}</date>
+  {/if}
 {/if}

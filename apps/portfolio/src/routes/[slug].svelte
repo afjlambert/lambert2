@@ -47,7 +47,7 @@
   <PageLogo src={logo} alt="{name} logo" />
 {/if}
 
-<h1>{name}</h1>
+<h1># {name}</h1>
 
 {#if description}
   <p>{description}</p>
@@ -79,10 +79,13 @@
 
   {#if posts.length > 0}
     <h2>Blog posts</h2>
+    <StarList>
+      {#each posts as post}
+        <li>
+          <BlogTeaser slug={post.slug} />
+        </li>
+      {/each}
+    </StarList>
   {/if}
-  {#each posts as post}
-    <BlogTeaser slug={post.slug} />
-    <hr />
-  {/each}
 
 </div>
