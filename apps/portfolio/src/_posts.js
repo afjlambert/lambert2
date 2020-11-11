@@ -1,4 +1,4 @@
-const filter = process.env.NODE_ENV !== "production";
+const filter = true;
 
 const posts = [
   {
