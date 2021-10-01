@@ -19,7 +19,7 @@
   },
   "homepage": "https://github.com/afjlambert/lambert2#readme",
   "devDependencies": {
-    "lerna": "^3.22.1"
+    "lerna": "^4.0.0"
   },
   "dependencies": {
     "express": "^4.17.1",
