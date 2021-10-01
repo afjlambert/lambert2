@@ -100,7 +100,6 @@ export default [
   {
     slug: "tuintuin",
     name: "TuinTuin",
-    website: "https://tuintuin.nl/",
     location: "Heiloo",
     dateString: "",
     tags: ["startup"],
