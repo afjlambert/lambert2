@@ -2,9 +2,9 @@
   export async function preload({ params, query }) {
     // the `slug` parameter is available because
     // this file is called [slug].svelte
-    const res = await this.fetch(`${params.slug}.json`);
+    const res = await this.fetch(`tags/${params.slug}.json`);
     const data = await res.json();
-
+  
     if (res.status === 200) {
       return { slug: params.slug, tag: data.tag };
     } else {
@@ -14,15 +14,15 @@
 </script>
 
 <script>
-  import StarList from "../components/StarList.svelte";
-  import Company from "../components/Company.svelte";
-  import CompanyTeaser from "../components/CompanyTeaser.svelte";
-  import PageLogo from "../components/PageLogo.svelte";
-  import ProjectTeaser from "../components/ProjectTeaser.svelte";
-  import BlogTeaser from "../components/BlogTeaser.svelte";
-  import allCompanies from "../_companies.js";
-  import allPosts from "../_posts.js";
-  import allProjects from "../_projects.js";
+  import StarList from "../../components/StarList.svelte";
+  import Company from "../../components/Company.svelte";
+  import CompanyTeaser from "../../components/CompanyTeaser.svelte";
+  import PageLogo from "../../components/PageLogo.svelte";
+  import ProjectTeaser from "../../components/ProjectTeaser.svelte";
+  import BlogTeaser from "../../components/BlogTeaser.svelte";
+  import allCompanies from "../../_companies.js";
+  import allPosts from "../../_posts.js";
+  import allProjects from "../../_projects.js";
 
   export let slug;
   export let tag;

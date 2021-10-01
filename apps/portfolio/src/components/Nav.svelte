@@ -20,6 +20,7 @@
       label: "Blog",
       segments: ["blog"]
     },
+    
     {
       label: "Resume",
       segments: ["resume"]
@@ -41,6 +42,9 @@
     padding: 0 1em;
     justify-content: center;
     display: flex;
+    z-index:100;  
+    position: relative;
+    background: white;
   }
   .selected {
     border-bottom: 2px solid orange;

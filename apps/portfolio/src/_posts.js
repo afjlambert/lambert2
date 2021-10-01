@@ -98,19 +98,6 @@ In a time of serverless developments....
 	bugs of border-radius very nice ;)
 	#iPhone #reflection #CSS3 #opacity #reflection #demos
 
-
-	iPhone Carousel test
-This is a demo I made to test the webkit CSS 3D transform and
-animation features. I used as little as javascript as possible
-to fully test these new features. On an iPhone you can also interact
-with this widget by tapping and dragging.
-Read more » 3d CSS3 carousel
-#iPhone #carousel #CSS3 #3d #transform #animation #box-shadow #opacity
-
-
-
-
-
 */
 
   {
@@ -174,6 +161,53 @@ Read more » 3d CSS3 carousel
   // Javascript framework.
   // #javascript #framework #frontend #development #Web 2.0 #widgets #Telegraaf #speurders
 
+  {
+    title: "iPhone Carousel test",
+    slug: "iphone-carousel-test",
+    tags: [
+      "iphone",
+      "carousel",
+      "CSS3",
+      "3d",
+      "transform",
+      "animation",
+      "box-shadow",
+      "opacity",
+    ],
+    company: "none",
+    // date: "2008",
+    categories: ["frontend"],
+    teaser: `3d CSS3 carousel`,
+    published: false,
+
+    html: `
+    
+    This is a demo I made to test the webkit CSS 3D transform and
+    animation features. I used as little as javascript as possible
+    to fully test these new features. On an iPhone you can also interact
+    with this widget by tapping and dragging.
+    
+    <a href="/demos/carousel">see demo</a>
+  	`,
+  },
+  {
+    title: "sadf",
+    slug: "asdfasdf",
+    tags: ["asdf"],
+    company: "telegraaf",
+    // date: "2008",
+    categories: ["frontend"],
+    teaser: ``,
+    published: false,
+
+    html: `
+    box-shadow testing 
+    border radius
+    jquery
+
+    <a href="/demos/box-shadow">see demo</a>
+  	`,
+  },
   // {
   // 	title: "",
   // 	slug: "",

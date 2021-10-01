@@ -15,10 +15,10 @@
 </script>
 
 <svelte:head>
-  <title>Blog</title>
+  <title>Blogs</title>
 </svelte:head>
 
-<h1>Blog</h1>
+<h1>Blogs</h1>
 
 {#if posts}
   <StarList>

@@ -51,6 +51,7 @@ export default [
     description: `i18n is a numeronym of "Internationalization". It's the process of designing a software application so that it can be adapted to various languages and regions without engineering changes.`,
   },
   { slug: "image-processing", name: "Image processing" },
+  { slug: "iphone", name: "iPhone" },
   { slug: "jenkins", name: "jenkins" },
   { slug: "jest", name: "Jest" },
   { slug: "jinja", name: "Jinja" },

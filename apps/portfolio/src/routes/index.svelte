@@ -92,13 +92,7 @@
   <a href="/categories/python/">
     <img src="svg/python.svg" alt="python logo" />
   </a>
-  <a href="/react/">
-    <img src="svg/react.svg" alt="react logo" />
-  </a>
-  <a href="/graphql/">
-    <img src="svg/graphql.svg" alt="graphql logo" />
-  </a>
-  <a href="/django/">
-    <img src="svg/django.svg" alt="django logo" />
-  </a>
+  <a href="/react/"> <img src="svg/react.svg" alt="react logo" /> </a>
+  <a href="/graphql/"> <img src="svg/graphql.svg" alt="graphql logo" /> </a>
+  <a href="/django/"> <img src="svg/django.svg" alt="django logo" /> </a>
 </LogoList>

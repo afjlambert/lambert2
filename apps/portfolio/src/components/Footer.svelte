@@ -11,6 +11,8 @@
     text-align: center;
     padding: 1rem;
     color: #888;
+    z-index: 100;
+    background: white;
   }
 </style>
 

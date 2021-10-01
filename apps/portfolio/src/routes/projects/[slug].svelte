@@ -92,7 +92,7 @@
 
 <div class="tags">
   {#each project.tags as tag}
-    <Tag slug={tag} />
+    <Tag slug={tag} />{' '}
   {/each}
 </div>
 

@@ -1,0 +1,369 @@
+<script>
+  import { onMount } from "svelte";
+
+  onMount(() => {
+    const now = () => new Date().getTime();
+
+    let looper = 0;
+    let last = now();
+    let start;
+
+    const turn = (direction = "right") => {
+      Array.from(document.querySelectorAll(".item")).map((item, walk) => {
+        let curpos = ((looper < 0 ? -looper : looper - 1) + walk) % 7;
+        curpos = curpos === 0 ? 7 : curpos;
+
+        let newpos = curpos + (direction === "right" ? 1 : -1);
+        newpos = newpos === 0 ? 7 : newpos === 8 ? 1 : newpos;
+
+        item.className = `item item${walk} loc${newpos} pos${curpos}-${newpos}`;
+      });
+      looper += direction === "right" ? 1 : -1;
+    };
+
+    let auto = setInterval(function () {
+      turn("right");
+    }, 800);
+
+    document.body.ontouchstart = (e) => {
+      clearInterval(auto);
+      start = e.touches[0].pageX;
+    };
+
+    document.body.ontouchmove = (e) => {
+      e.preventDefault();
+      end = e.touches[0].pageX;
+      diff = start - end;
+
+      if ((diff < -200 || diff > 200) && new Date().getTime() > last + 500) {
+        last = now();
+        start = end;
+        turn(diff > 150 ? "left" : "right");
+      }
+    };
+  });
+</script>
+
+<style>
+  h1 {
+    font-size: 1em;
+    padding: 5px 15px 0px 0;
+  }
+  :global(.carousel) {
+    perspective: 900px;
+  }
+  :global(.carousel .item) {
+    transform-style: preserve-3d;
+    position: absolute;
+    left: 35%;
+    top: 10%;
+  }
+
+  :global(.carousel .item div) {
+    background-repeat: no-repeat;
+    border: 3px solid black;
+    width: 200px;
+    padding-top: 140px;
+    text-align: right;
+    transform: translateZ(350px);
+    border-radius: 20px;
+    box-shadow: 0 0 20px #ccc;
+  }
+  :global(.carousel .loc1:active) {
+    transform: translateZ(30px);
+  }
+
+  :global(.carousel .item1 div) {
+    background-image: url("/demos/carousel/1.jpg");
+  }
+  :global(.carousel .item2 div) {
+    background-image: url("/demos/carousel/2.jpg");
+  }
+  :global(.carousel .item3 div) {
+    background-image: url("/demos/carousel/3.jpg");
+  }
+  :global(.carousel .item4 div) {
+    background-image: url("/demos/carousel/4.jpg");
+  }
+  :global(.carousel .item5 div) {
+    background-image: url("/demos/carousel/5.jpg");
+  }
+  :global(.carousel .item6 div) {
+    background-image: url("/demos/carousel/6.jpg");
+  }
+  :global(.carousel .item7 div) {
+    background-image: url("/demos/carousel/7.jpg");
+  }
+
+  :global(.carousel .loc1) {
+    transform: rotateY(0deg);
+  }
+  :global(.carousel .loc2) {
+    transform: rotateY(51deg);
+    opacity: 0.9;
+  }
+  :global(.carousel .loc3) {
+    transform: rotateY(103deg);
+    opacity: 0.7;
+  }
+  :global(.carousel .loc4) {
+    transform: rotateY(154deg);
+    opacity: 0.5;
+  }
+  :global(.carousel .loc5) {
+    transform: rotateY(206deg);
+    opacity: 0.5;
+  }
+  :global(.carousel .loc6) {
+    transform: rotateY(257deg);
+    opacity: 0.7;
+  }
+  :global(.carousel .loc7) {
+    transform: rotateY(309deg);
+    opacity: 0.9;
+  }
+
+  :global(.pos1-2) {
+    animation-name: pos1-2;
+    animation-duration: 0.4s;
+    animation-timing-function: cubic-bezier(1, 0.1, 0.4, 1.2);
+  }
+  :global(.pos2-3) {
+    animation-name: pos2-3;
+    animation-duration: 0.4s;
+    animation-timing-function: cubic-bezier(1, 0.1, 0.4, 1.2);
+  }
+  :global(.pos3-4) {
+    animation-name: pos3-4;
+    animation-duration: 0.4s;
+    animation-timing-function: cubic-bezier(1, 0.1, 0.4, 1.2);
+  }
+  :global(.pos4-5) {
+    animation-name: pos4-5;
+    animation-duration: 0.4s;
+    animation-timing-function: cubic-bezier(1, 0.1, 0.4, 1.2);
+  }
+  :global(.pos5-6) {
+    animation-name: pos5-6;
+    animation-duration: 0.4s;
+    animation-timing-function: cubic-bezier(1, 0.1, 0.4, 1.2);
+  }
+  :global(.pos6-7) {
+    animation-name: pos6-7;
+    animation-duration: 0.4s;
+    animation-timing-function: cubic-bezier(1, 0.1, 0.4, 1.2);
+  }
+  :global(.pos7-1) {
+    animation-name: pos7-1;
+    animation-duration: 0.4s;
+    animation-timing-function: cubic-bezier(1, 0.1, 0.4, 1.2);
+  }
+  :global(.pos1-7) {
+    animation-name: pos1-7;
+    animation-duration: 0.4s;
+    animation-timing-function: cubic-bezier(1, 0.1, 0.4, 1.2);
+  }
+  :global(.pos2-1) {
+    animation-name: pos2-1;
+    animation-duration: 0.4s;
+    animation-timing-function: cubic-bezier(1, 0.1, 0.4, 1.2);
+  }
+  :global(.pos3-2) {
+    animation-name: pos3-2;
+    animation-duration: 0.4s;
+    animation-timing-function: cubic-bezier(1, 0.1, 0.4, 1.2);
+  }
+  :global(.pos4-3) {
+    animation-name: pos4-3;
+    animation-duration: 0.4s;
+    animation-timing-function: cubic-bezier(1, 0.1, 0.4, 1.2);
+  }
+  :global(.pos5-4) {
+    animation-name: pos5-4;
+    animation-duration: 0.4s;
+    animation-timing-function: cubic-bezier(1, 0.1, 0.4, 1.2);
+  }
+  :global(.pos6-5) {
+    animation-name: pos6-5;
+    animation-duration: 0.4s;
+    animation-timing-function: cubic-bezier(1, 0.1, 0.4, 1.2);
+  }
+  :global(.pos7-6) {
+    animation-name: pos7-6;
+    animation-duration: 0.4s;
+    animation-timing-function: cubic-bezier(1, 0.1, 0.4, 1.2);
+  }
+
+  @keyframes pos1-2 {
+    from {
+      transform: rotateY(0deg);
+      opacity: 1;
+    }
+    to {
+      transform: rotateY(51deg);
+      opacity: 0.9;
+    }
+  }
+
+  @keyframes pos2-3 {
+    from {
+      transform: rotateY(51deg);
+      opacity: 0.9;
+    }
+    to {
+      transform: rotateY(103deg);
+      opacity: 0.7;
+    }
+  }
+  @keyframes pos3-4 {
+    from {
+      transform: rotateY(103deg);
+      opacity: 0.7;
+    }
+    to {
+      transform: rotateY(154deg);
+      opacity: 0.5;
+    }
+  }
+  @keyframes pos4-5 {
+    from {
+      transform: rotateY(154deg);
+      opacity: 0.5;
+    }
+    to {
+      transform: rotateY(206deg);
+      opacity: 0.5;
+    }
+  }
+  @keyframes pos5-6 {
+    from {
+      transform: rotateY(206deg);
+      opacity: 0.5;
+    }
+    to {
+      transform: rotateY(257deg);
+      opacity: 0.7;
+    }
+  }
+  @keyframes pos6-7 {
+    from {
+      transform: rotateY(257deg);
+      opacity: 0.7;
+    }
+    to {
+      transform: rotateY(309deg);
+      opacity: 0.9;
+    }
+  }
+  @keyframes pos7-1 {
+    from {
+      transform: rotateY(309deg);
+      opacity: 0.9;
+    }
+    to {
+      transform: rotateY(0deg);
+      opacity: 1;
+    }
+  }
+
+  @keyframes pos1-7 {
+    from {
+      transform: rotateY(0deg);
+      opacity: 1;
+    }
+    to {
+      transform: rotateY(309deg);
+      opacity: 0.9;
+    }
+  }
+  @keyframes pos2-1 {
+    from {
+      transform: rotateY(51deg);
+      opacity: 0.9;
+    }
+    to {
+      transform: rotateY(0deg);
+      opacity: 1;
+    }
+  }
+  @keyframes pos3-2 {
+    from {
+      transform: rotateY(103deg);
+      opacity: 0.7;
+    }
+    to {
+      transform: rotateY(51deg);
+      opacity: 0.9;
+    }
+  }
+  @keyframes pos4-3 {
+    from {
+      transform: rotateY(154deg);
+      opacity: 0.5;
+    }
+    to {
+      transform: rotateY(103deg);
+      opacity: 0.7;
+    }
+  }
+  @keyframes pos5-4 {
+    from {
+      transform: rotateY(206deg);
+      opacity: 0.5;
+    }
+    to {
+      transform: rotateY(154deg);
+      opacity: 0.5;
+    }
+  }
+  @keyframes pos6-5 {
+    from {
+      transform: rotateY(257deg);
+      opacity: 0.7;
+    }
+    to {
+      transform: rotateY(206deg);
+      opacity: 0.5;
+    }
+  }
+  @keyframes pos7-6 {
+    from {
+      transform: rotateY(309deg);
+      opacity: 0.9;
+    }
+    to {
+      transform: rotateY(257deg);
+      opacity: 0.7;
+    }
+  }
+</style>
+
+<svelte:head>
+  <title>css3 test</title>
+</svelte:head>
+
+<div class="carousel">
+  <div class="center">
+    <div class="item item1 loc1">
+      <div><h1>Dancing people</h1></div>
+    </div>
+    <div class="item item2 loc2">
+      <div><h1>Jump over the horizon</h1></div>
+    </div>
+    <div class="item item3 loc3">
+      <div><h1>Feeling green</h1></div>
+    </div>
+    <div class="item item4 loc4">
+      <div><h1>Light the skies</h1></div>
+    </div>
+    <div class="item item5 loc5">
+      <div><h1>Bubbles everywhere</h1></div>
+    </div>
+    <div class="item item6 loc6">
+      <div><h1>Enjoy the summer</h1></div>
+    </div>
+    <div class="item item7 loc7">
+      <div><h1>Hello world</h1></div>
+    </div>
+  </div>
+</div>

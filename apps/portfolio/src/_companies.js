@@ -2,7 +2,7 @@ import Model from "./_model";
 
 class Company extends Model {
   constructor(data) {
-    super(data, ["slug", "name", "website"]);
+    super(data, ["slug", "name"]);
     this.slug = data.slug;
     this.name = data.name;
     this.tags = data.tags || [];

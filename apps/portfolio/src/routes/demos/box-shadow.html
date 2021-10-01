@@ -1,0 +1,80 @@
+<style>
+  :global(.rounded) {
+    border-radius: 10px;
+    border: 2px solid white;
+    position: absolute;
+    z-index: 50;
+  }
+</style>
+
+<script>
+  import { onDestroy } from "svelte";
+  onDestroy(() => {
+    try {
+      jQuery(".remove-on-unmount").remove();
+    } catch (e) {}
+  });
+
+  const x = () => {
+    function rand(max, min) {
+      if (!min) min = 0;
+      return parseInt(Math.random() * (max - min)) + min;
+    }
+
+    var obj = {};
+    for (var walk = 0; walk < 20; walk++) {
+      var ob = {
+        size: rand(80, 20),
+        top: rand(window.innerHeight),
+        left: rand(window.innerWidth),
+      };
+      var r = rand(255, 100);
+      var g = rand(255, 100);
+      var b = rand(255, 100);
+
+      jQuery("body").append(
+        `<div id="${walk}" class="remove-on-unmount rounded" style="left: ${ob.left}px; z-index:${ob.size}; top:${ob.top}px; width:${ob.size}px; height: ${ob.size}px; background-color:rgb(${r},${g},${b});"></div>`
+      );
+
+      obj[walk] = ob;
+    }
+
+    var divs = jQuery("div");
+
+    jQuery(document).mousemove(function (e) {
+      for (var walk = 0; walk < 20; walk++) {
+        var el = obj[walk];
+        var left = el.left + parseInt(el.size / 2);
+        var top = el.top + parseInt(el.size / 2);
+        var distanceX = e.pageX - left;
+        var distanceY = e.pageY - top;
+        var posDistanceX = distanceX < 0 ? -distanceX : distanceX;
+        var posDistanceY = distanceY < 0 ? -distanceY : distanceY;
+        var distanceZ = 80 - el.size;
+
+        var blur =
+          (posDistanceX < posDistanceY ? posDistanceY : posDistanceX) / 10;
+        if (blur > 50) blur = 50;
+        var newval =
+          left -
+          e.pageX +
+          distanceX * (distanceZ / 60) +
+          "px " +
+          (top - e.pageY + distanceY * (distanceZ / 60)) +
+          "px " +
+          blur +
+          "px #000";
+
+        jQuery("#" + walk).css("-webkit-box-shadow", newval);
+      }
+    });
+  };
+</script>
+
+<svelte:head>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.2.6/jquery.js"
+    on:load="{x}"
+  ></script>
+</svelte:head>
+<div id="debug"></div>
